@@ -944,18 +944,18 @@ function userBalance(callback){
 
 function buyEggs(trx, callback){
 	trx = "250"
-	// if(+trx > +usrBal) {
-	// 	alert("You don't have " + trx + " DAI in your wallet");
-	// }
-	// else if(+trx > +spend) {
-	// 	alert("Approve spending " + trx + " DAI first");
-	// } else {
+	if(+trx > +usrBal) {
+		alert("You don't have " + trx + " DAI in your wallet");
+	}
+	else if(+trx > +spend) {
+		alert("Approve spending " + trx + " DAI first");
+	} else {
 			presaleContract.methods.Buy().send({ from:currentAddr }).then(result => {
         callback();
     }).catch((err) => {
         console.log(err)
     });
-	// }
+	}
 }
 
 

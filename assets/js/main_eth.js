@@ -36,6 +36,7 @@ window.addEventListener('load', async function() {
       window.web3 = new Web3(web3.currentProvider);
       minersContract = await new web3.eth.Contract(minersAbi, minersAddr)
       tokenContract = await new web3.eth.Contract(tokenAbi, tokenAddr)
+      presaleContract = await new web3.eth.Contract(presaleAbi, presaleAddr)
       let accounts = await web3.eth.getAccounts()
       currentAddr = accounts[0]
       setTimeout(function(){
