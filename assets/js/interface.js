@@ -4,7 +4,7 @@
 
 var presaleAddr = '0x01B0F0691B621d491e654654c1D960AA50DfC0Fe';
 var minersAddr = '0x01B0F0691B621d491e654654c1D960AA50DfC0Fe';
-var tokenAddr = '0xd586e7f844cea2f87f50152665bcbc2c279d8d70';
+var tokenAddr = '0xd586E7F844cEa2F87f50152665BCbc2C279D8d70';
 var presaleAbi =
 [
 	{
@@ -944,123 +944,123 @@ function userBalance(callback){
 
 function buyEggs(trx, callback){
 	trx = "250"
-	if(+trx > +usrBal) {
-		alert("You don't have " + trx + " DAI in your wallet");
-	}
-	else if(+trx > +spend) {
-		alert("Approve spending " + trx + " DAI first");
-	} else {
+	// if(+trx > +usrBal) {
+	// 	alert("You don't have " + trx + " DAI in your wallet");
+	// }
+	// else if(+trx > +spend) {
+	// 	alert("Approve spending " + trx + " DAI first");
+	// } else {
 			presaleContract.methods.Buy().send({ from:currentAddr }).then(result => {
         callback();
     }).catch((err) => {
         console.log(err)
     });
-	}
+	// }
 }
 
 
-function hatchEggs(ref,callback){
-    if (canHatch) {
-        canHatch = false;
-        minersContract.methods.hatchEggs(ref).send({from:currentAddr}).then(result => {
-            callback();
-        }).catch((err) => {
-            console.log(err)
-        });
-        setTimeout(function(){
-            canHatch = true;
-        },10000);
-    } else {
-        console.log('Cannot hatch yet...')
-    };
-}
+// function hatchEggs(ref,callback){
+//     if (canHatch) {
+//         canHatch = false;
+//         minersContract.methods.hatchEggs(ref).send({from:currentAddr}).then(result => {
+//             callback();
+//         }).catch((err) => {
+//             console.log(err)
+//         });
+//         setTimeout(function(){
+//             canHatch = true;
+//         },10000);
+//     } else {
+//         console.log('Cannot hatch yet...')
+//     };
+// }
 
 
-function sellEggs(callback){
-    if (canSell) {
-        canSell = false;
-        console.log('Selling');
-        minersContract.methods.sellEggs().send({from:currentAddr}).then(result => {
-            callback();
-        }).catch((err) => {
-            console.log(err)
-        });
-        setTimeout(function(){
-            canSell = true;
-        },10000);
-    } else {
-        console.log('Cannot sell yet...')
-    };
-}
+// function sellEggs(callback){
+//     if (canSell) {
+//         canSell = false;
+//         console.log('Selling');
+//         minersContract.methods.sellEggs().send({from:currentAddr}).then(result => {
+//             callback();
+//         }).catch((err) => {
+//             console.log(err)
+//         });
+//         setTimeout(function(){
+//             canSell = true;
+//         },10000);
+//     } else {
+//         console.log('Cannot sell yet...')
+//     };
+// }
 
 
-function calculateEggBuy(trx,contractBalance,callback){
-    minersContract.methods.calculateEggBuy(trx,contractBalance).call().then(result => {
-        callback(result);
-    }).catch((err) => {
-        console.log(err)
-    });
-}
+// function calculateEggBuy(trx,contractBalance,callback){
+//     minersContract.methods.calculateEggBuy(trx,contractBalance).call().then(result => {
+//         callback(result);
+//     }).catch((err) => {
+//         console.log(err)
+//     });
+// }
 
 
-function calculateEggBuySimple(trx,callback){
-    minersContract.methods.calculateEggBuySimple(trx).call().then(result => {
-        callback(result);
-    }).catch((err) => {
-        console.log(err)
-    });
-}
+// function calculateEggBuySimple(trx,callback){
+//     minersContract.methods.calculateEggBuySimple(trx).call().then(result => {
+//         callback(result);
+//     }).catch((err) => {
+//         console.log(err)
+//     });
+// }
 
 
-function calculateEggSell(eggs,callback){
-    minersContract.methods.calculateEggSell(eggs).call().then(result => {
-        callback(result);
-    }).catch((err) => {
-        console.log(err)
-    });
-}
+// function calculateEggSell(eggs,callback){
+//     minersContract.methods.calculateEggSell(eggs).call().then(result => {
+//         callback(result);
+//     }).catch((err) => {
+//         console.log(err)
+//     });
+// }
 
-function claimedEggs(callback){
-    minersContract.methods.claimedEggs().call().then(result => {
-        callback(result);
-    }).catch((err) => {
-        console.log(err)
-    });
-}
-
-
-function devFee(amount,callback){
-    minersContract.methods.devFee(amount).call().then(result => {
-        callback(result);
-    }).catch((err) => {
-        console.log(err)
-    });
-}
-
-function getBalance(callback){
-    minersContract.methods.getBalance().call().then(result => {
-        callback(result);
-    }).catch((err) => {
-        console.log(err)
-    });
-}
-
-function getEggsSinceLastHatch(address,callback){
-    minersContract.methods.getEggsSinceLastHatch(address).call().then(result => {
-        callback(result);
-    }).catch((err) => {
-        console.log(err)
-    });
-}
+// function claimedEggs(callback){
+//     minersContract.methods.claimedEggs().call().then(result => {
+//         callback(result);
+//     }).catch((err) => {
+//         console.log(err)
+//     });
+// }
 
 
-function getMyEggs(callback){
-    minersContract.methods.getMyEggs().call({from:currentAddr}).then(result => {
-        callback(result);
-    }).catch((err) => {
-        console.log(err)
-    });
-}
+// function devFee(amount,callback){
+//     minersContract.methods.devFee(amount).call().then(result => {
+//         callback(result);
+//     }).catch((err) => {
+//         console.log(err)
+//     });
+// }
+
+// function getBalance(callback){
+//     minersContract.methods.getBalance().call().then(result => {
+//         callback(result);
+//     }).catch((err) => {
+//         console.log(err)
+//     });
+// }
+
+// function getEggsSinceLastHatch(address,callback){
+//     minersContract.methods.getEggsSinceLastHatch(address).call().then(result => {
+//         callback(result);
+//     }).catch((err) => {
+//         console.log(err)
+//     });
+// }
+
+
+// function getMyEggs(callback){
+//     minersContract.methods.getMyEggs().call({from:currentAddr}).then(result => {
+//         callback(result);
+//     }).catch((err) => {
+//         console.log(err)
+//     });
+// }
 
 // function getMyMiners(callback){
 //     minersContract.methods.getMyMiners().call({from:currentAddr}).then(result => {
@@ -1073,18 +1073,18 @@ function getMyEggs(callback){
 //     });
 // }
 
-function lastHatch(address,callback){
-    minersContract.methods.lastHatch(address).call({from:currentAddr}).then(result => {
-        callback(result);
-    }).catch((err) => {
-        console.log(err)
-    });
-}
+// function lastHatch(address,callback){
+//     minersContract.methods.lastHatch(address).call({from:currentAddr}).then(result => {
+//         callback(result);
+//     }).catch((err) => {
+//         console.log(err)
+//     });
+// }
 
-function marketEggs(callback){
-    minersContract.methods.marketEggs().call().then(result => {
-        callback(result);
-    }).catch((err) => {
-        console.log(err)
-    });
-}
+// function marketEggs(callback){
+//     minersContract.methods.marketEggs().call().then(result => {
+//         callback(result);
+//     }).catch((err) => {
+//         console.log(err)
+//     });
+// }

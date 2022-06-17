@@ -54,6 +54,7 @@ window.addEventListener('load', async function() {
 function approve() {
     // var trxspenddoc=web3.utils.fromWei(250e18);
     approveBUSD(web3.utils.toWei('250', 'ether'));
+
 }
 
 function controlLoop(){
@@ -61,7 +62,7 @@ function controlLoop(){
     setTimeout(controlLoop,2500)
 }
 function controlLoopFaster(){
-    liveUpdateEggs()
+    refreshData()
     // liveUpdatePeers()
     setTimeout(controlLoopFaster,30)
 }
@@ -103,9 +104,9 @@ function refreshData(){
         userBalanceElem.textContent = stripDecimals(rawStr, 3) + ' DAI';
     });
 
-    lastHatch(currentAddr,function(lh){
-        lastHatchTime=lh
-    });
+    // lastHatch(currentAddr,function(lh){
+    //     lastHatchTime=lh
+    // });
     // getMyEggs(function(eggs){
     //     if(lastNumEggs!=eggs){
     //         lastNumEggs=eggs
@@ -131,8 +132,8 @@ function refreshData(){
     //     var productiondoc=document.getElementById('production-rate')
     //     productiondoc.textContent=formatEggs(lastNumMiners*60*60)
     // });
-    updateBuyPrice()
-    updateSellPrice()
+    // updateBuyPrice()
+    // updateSellPrice()
 }
 function updateEggNumber(eggs){
     var hatchminersquantitydoc=document.getElementById('hatchminersquantity')
@@ -175,18 +176,18 @@ function updateSellPrice(){
    });
 }
 
-function updateBuyPrice(){
-    //var eggstobuydoc1=document.getElementById('eggs-to-buy-1')
-    var eggstobuydoc2=document.getElementById('eggs-to-buy-2')
+// function updateBuyPrice(){
+//     //var eggstobuydoc1=document.getElementById('eggs-to-buy-1')
+//     var eggstobuydoc2=document.getElementById('eggs-to-buy-2')
 
-    var trxspenddoc=document.getElementById('eth-to-spend')
-    calculateEggBuySimple(web3.utils.toWei(trxspenddoc.value),function(eggs){
-        devFee(eggs,function(fee){
-           // eggstobuydoc1.textContent=formatEggs(eggs-fee)
-            eggstobuydoc2.textContent=formatEggs(eggs-fee)
-        });
-    });
-}
+//     var trxspenddoc=document.getElementById('eth-to-spend')
+//     calculateEggBuySimple(web3.utils.toWei(trxspenddoc.value),function(eggs){
+//         devFee(eggs,function(fee){
+//            // eggstobuydoc1.textContent=formatEggs(eggs-fee)
+//             eggstobuydoc2.textContent=formatEggs(eggs-fee)
+//         });
+//     });
+// }
 function buyEggs2(){
 
 
