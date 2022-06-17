@@ -60,14 +60,16 @@ $secondary-color: white;
       box-shadow: 0 4px 15px 0 rgba(52, 54, 54, 0.75);
       color: $secondary-color;
       border: 1px solid black;
-      width: 210px;
+      width: 250px;
+      align-items: center;
     }
     .btn-contribute {
       background-color: $primary-color;
       box-shadow: 0 4px 15px 0 rgba(52, 54, 54, 0.75);
       color: $secondary-color;
       border: 1px solid black;
-      width: 243px;
+      width: 250px;
+       align-items: center;
     }
   }
 
@@ -80,7 +82,8 @@ $secondary-color: white;
         background-color: $primary-color;
         box-shadow: 0 4px 15px 0 rgba(52, 54, 54, 0.75);
         color: $secondary-color;
-        width: 200px;
+        width: 250px;
+        align-items: center;
       }
     }
   }
