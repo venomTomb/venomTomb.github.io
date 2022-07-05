@@ -1,0 +1,90 @@
+$primary-color: #930993;
+$secondary-color: white;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#myVideo {
+  position: fixed;
+  margin: 0 auto;
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  #myVideo {
+    display: none;
+  }
+  body{
+    background-image: url('../Images/Mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.container {
+  height: 100vh;
+  .row {
+    .cards {
+      background-color: rgba(147, 9, 147, 0.199);
+      border-radius: 30px;
+      padding: 25px;
+      border: 2px solid $primary-color;
+      .glow {
+        font-size: 60px;
+        color: #fff;
+        text-align: center;
+        font-family: 'OlausW00-Magnus';
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+            0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073,
+            0 0 70px #e60073;
+        }
+
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+      }
+    }
+
+    .btn-buy {
+      background-color: $primary-color;
+      box-shadow: 0 4px 15px 0 rgba(52, 54, 54, 0.75);
+      color: $secondary-color;
+      border: 1px solid black;
+      width: 250px;
+      align-items: center;
+    }
+    .btn-contribute {
+      background-color: $primary-color;
+      box-shadow: 0 4px 15px 0 rgba(52, 54, 54, 0.75);
+      color: $secondary-color;
+      border: 1px solid black;
+      width: 250px;
+       align-items: center;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .container{
+      height: 50vh;
+    }
+    .row {
+      .btn-buy {
+        background-color: $primary-color;
+        box-shadow: 0 4px 15px 0 rgba(52, 54, 54, 0.75);
+        color: $secondary-color;
+        width: 250px;
+        align-items: center;
+      }
+    }
+  }
+}
