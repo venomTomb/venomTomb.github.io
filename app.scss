@@ -25,12 +25,12 @@ $secondary-color: white;
 }
 
 .container {
-  height: 100vh;
+  height: 25vh;
   .row {
     .cards {
       background-color: rgba(147, 9, 147, 0.199);
-      border-radius: 30px;
-      padding: 25px;
+      border-radius: 100px;
+      padding: 55px;
       border: 2px solid $primary-color;
       .glow {
         font-size: 60px;
@@ -39,8 +39,28 @@ $secondary-color: white;
         font-family: 'OlausW00-Magnus';
         animation: glow 1s ease-in-out infinite alternate;
       }
+      .glow2 {
+        font-size: 30px;
+        color: rgb(240, 241, 245);
+        text-align: center;
+        font-family: 'OlausW00-Magnus';
+        animation: glow2 1s ease-in-out infinite alternate;
+      }
 
       @keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+            0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073,
+            0 0 70px #e60073;
+        }
+
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+      }
+       @keyframes glow2 {
         from {
           text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
             0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073,

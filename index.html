@@ -21,32 +21,34 @@
   <source src="./Images/video.mp4" type="video/mp4">
 </video>
 
-<div class="container d-flex justify-content-center align-items-center flex-column">
+<div class="container d-1% justify-content-center align-items-center ">
   <div class="row">
-    <div class="col-sm-12 mx-auto">
-      <div class="cards mb-5 font-weight-bold">
-        <h1 class="heading glow text-center"><span> <img src="./Images/venom.png" width="100"> </span>Venom VEX Presale</h1>
+    <div class="col-sm-auto mx-auto">
+      <div class="cards mb-5 sm-5 mx-auto">
+        <h1 class="heading glow text-center text-align-center; size:10%"><span> <img src="./Images/venom.png" width="50"> </span>Venom VEX Presale</h1>
+<div class="spend-input">
 
+    <input class="form-control" id="eth-to-spend" name="spend" onchange="updateBuyPrice()" step="100"
+    type="number" value="1000">
+    <span class="text-white text-center text-size-25 mt-18">HOST</span>
+  </div>
  
       <button style = "position:relative; left:20%; right:25%; top:5%;" class="btn btn-lg btn-buy" onclick="approve()" role="button"> Approve HOST </button> 
-  <p id="spend-limit"></p>
+  <!-- <p id="spend-limit"></p> -->
+   <button style = "position:relative; left:20%; right:25%; top:25%;" class="btn btn-lg btn-buy" onclick="buyEggs2()" role="button"> Contribute to <span id="eggs-to-buy-2"></span> VC </button>
+ 
 
   <div class="digging-mined-container">
     <div class="custom-row">
-      <div class="heading glow text-center">
+      <div class="text-white text-center mt-3">
         <p><span id="production-rate">0</span> HOST contributed</p>
       </div>
     </div>
 
-  <button style = "position:relative; left:20%; right:25%; top:25%;" class="btn btn-lg btn-buy" onclick="buyEggs2()" role="button"> Contribute to <span id="eggs-to-buy-2"></span> VC </button>
   <br> 
   <br>
 
-  <div class="spend-input">
-    <input class="form-control" id="eth-to-spend" name="spend" onchange="updateBuyPrice()" step="100"
-    type="number" value="1000">
-    <span class="heading glow text-center">HOST</span>
-  </div>
+  
 
         <!-- <a href="" class="d-flex justify-content-center py-3"><button class="btn btn-buy font-weight-bold" onclick="approve()" >Approve spend 250 HOST</button></a>
         <a href="" class="d-flex justify-content-center py-3"><button class="btn btn-contribute font-weight-bold" onclick="buyEggs2()" >Contribute to <span id="eggs-to-buy-2"></span> venture capital</button></a>

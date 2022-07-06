@@ -48,10 +48,10 @@ nav {
 .digging-mined-container {
   display: flex;
   flex-direction: row;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
-@media (max-width: 750px){
+@media (max-width: 75px){
   .digging-mined-container {
     flex-direction: column;
   }
@@ -197,6 +197,7 @@ nav {
     margin-bottom: 40px;
 }
 
+
 .miners-tally-container h1 {
   /* color: #fff; */
 }
@@ -247,6 +248,14 @@ nav {
 .heading{
   max-width: 300px;
   margin: 0 auto;
+}
+.heading2{
+  max-width: 150px;
+  margin: 0 auto;
+  font-size: 60px;
+        color: #fff;
+        text-align: center;
+        font-family: 'OlausW00-Magnus';
 }
 
 .main-logo{
